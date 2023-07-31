@@ -1,0 +1,18 @@
+digraph {
+    surface_reference_zarr -> nudge_to_fine_baseline_run;
+    fine_restarts_to_zarr -> nudge_to_fine_baseline_run;
+    nudge_to_fine_baseline_run -> training_data_zarr;
+    training_data_zarr -> prescribed_cloud_cc_decorr_run;
+    training_data_zarr -> prescribed_cloud_cc_max_random_run;
+    training_data_zarr -> prescribed_cloud_cc_random_run;
+    training_data_zarr -> prescribed_cloud_decorr_run;
+    training_data_zarr -> prescribed_cloud_max_random_run;
+    training_data_zarr -> prescribed_cloud_random_run;
+    training_data_zarr -> train_cloud_ml_dense_seed;
+    train_cloud_ml_dense_seed -> upload_squashed_models;
+    upload_squashed_models -> prescribed_cloud_dense_seed_squash_threshold;
+    upload_squashed_models -> offline_cloud_predictions_zarr;
+    prescribed_cloud_dense_seed_squash_threshold -> offline_cloud_predictions_zarr;
+    upload_squashed_models -> offline_cloud_predictions_squashed_zarr;
+    prescribed_cloud_dense_seed_squash_threshold -> offline_cloud_predictions_squashed_zarr;
+}
